@@ -22,6 +22,7 @@ public class FrameComponentEx extends JFrame implements ActionListener {
 	private JButton btn3;
 	private JButton btn2;
 	private JButton btn1;
+	private JButton btn_1;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -43,18 +44,17 @@ public class FrameComponentEx extends JFrame implements ActionListener {
 
 	private void initialize() {
 		setTitle("공통속성");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 425, 324);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(0, 1, 0, 0));
 
-		btn1 = new JButton("Magenta/Tellow Button");
-		btn1.setFont(new Font("Arial", Font.ITALIC, 20));
-		btn1.setForeground(Color.MAGENTA);
-		btn1.setBackground(Color.YELLOW);
+		btn1 = createBtn();
 		contentPane.add(btn1);
+
+		createBtn();
 
 		btn2 = new JButton("Disabled Button");
 		btn2.addActionListener(this);
@@ -66,7 +66,20 @@ public class FrameComponentEx extends JFrame implements ActionListener {
 		contentPane.add(btn3);
 	}
 
+	public JButton createBtn() {//////////////
+		btn_1 = new JButton("Magenta/Tellow Button");
+		btn_1.addActionListener(this);
+		btn_1.setFont(new Font("Arial", Font.ITALIC, 20));
+		btn_1.setForeground(Color.MAGENTA);
+		btn_1.setBackground(Color.YELLOW);
+		return btn_1;////////////////////////////////////////
+
+	}
+
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btn_1) {
+			actionPerformedBtn(e);
+		}
 		if (e.getSource() == btn2) {
 			actionPerformedBtn2(e);
 		}
@@ -88,18 +101,26 @@ public class FrameComponentEx extends JFrame implements ActionListener {
 		}
 
 	}
+
 	protected void actionPerformedBtn2(ActionEvent e) {
-		if(btn1 != null) {
+		if (btn1 != null) {
 			contentPane.remove(btn1);
-			revalidate();  //이렇게 해줘야 삭제된다. (삭제후 새로그린게 적용되서 보이게 하는거)
+			btn1 = null;
+			revalidate(); // 이렇게 해줘야 삭제된다. (삭제후 새로그린게 적용되서 보이게 하는거)
+		} else { // 존재하지않으면
+			btn1 = createBtn();
+			System.out.println(contentPane.getComponents().length);
+			contentPane.add(btn1, 0);
+			revalidate();
+
 			
-			
-		}else {  //존재하지않으면
-		if(btn1.isVisible()) {
-			btn1.setVisible(false);
-		}else {
-			btn1.setVisible(true);
 		}
+	}
+	protected void actionPerformedBtn(ActionEvent e) {
+		if (btn3.isVisible()) {
+			btn3.setVisible(false);
+		} else {
+			btn3.setVisible(true);
 		}
 	}
 }
