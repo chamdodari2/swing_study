@@ -22,7 +22,7 @@ public class FrameComponentEx extends JFrame implements ActionListener {
 	private JButton btn3;
 	private JButton btn2;
 	private JButton btn1;
-	private JButton btn_1;
+
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -67,17 +67,18 @@ public class FrameComponentEx extends JFrame implements ActionListener {
 	}
 
 	public JButton createBtn() {//////////////
-		btn_1 = new JButton("Magenta/Tellow Button");
-		btn_1.addActionListener(this);
-		btn_1.setFont(new Font("Arial", Font.ITALIC, 20));
-		btn_1.setForeground(Color.MAGENTA);
-		btn_1.setBackground(Color.YELLOW);
-		return btn_1;////////////////////////////////////////
+		JButton btn;
+		btn = new JButton("Magenta/Tellow Button");
+		btn.addActionListener(this);
+		btn.setFont(new Font("Arial", Font.ITALIC, 20));
+		btn.setForeground(Color.MAGENTA);
+		btn.setBackground(Color.YELLOW);
+		return btn;////////////////////////////////////////
 
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == btn_1) {
+		if (e.getSource() == btn1) {
 			actionPerformedBtn(e);
 		}
 		if (e.getSource() == btn2) {
@@ -112,7 +113,6 @@ public class FrameComponentEx extends JFrame implements ActionListener {
 			System.out.println(contentPane.getComponents().length);
 			contentPane.add(btn1, 0);
 			revalidate();
-
 			
 		}
 	}
