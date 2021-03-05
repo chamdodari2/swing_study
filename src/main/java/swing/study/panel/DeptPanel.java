@@ -7,6 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+@SuppressWarnings("serial")
 public class DeptPanel extends JPanel {
 	private JTextField tfDeptNo;
 	private JTextField tfDeptName;
@@ -64,5 +65,6 @@ public class DeptPanel extends JPanel {
 		tfDeptName.setText("");
 		tfFloor.setText("");
 		
-		}
+	}
+	
 }
