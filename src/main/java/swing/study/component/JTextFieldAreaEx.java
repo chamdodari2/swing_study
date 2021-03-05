@@ -71,10 +71,10 @@ public class JTextFieldAreaEx extends JFrame implements ActionListener {
 		JLabel lblName = new JLabel("성명");
 		lblName.setHorizontalAlignment(SwingConstants.RIGHT);
 		pNorth.add(lblName);
-
-		tfName = new JTextField();
-//		tfName.addActionListener(this); /// 얘 지워줘야한다
-		pNorth.add(tfName);  //얘느 ㄴㄴ
+////////////////////////////////////////////////////////////////////////////
+		tfName = new JTextField();   //필드에 선언된 변수 tfName텍스트 필드 생성(객체화) (아래칸)
+//		tfName.addActionListener(this); /// 얘 지워줘야한다  누르면 리스트가 생긴다? 
+		pNorth.add(tfName);  //얘느 ㄴㄴ   //성명칸에 추가()
 		tfName.setColumns(10);
 
 		JLabel lblPass1 = new JLabel("비밀번호");
@@ -94,7 +94,7 @@ public class JTextFieldAreaEx extends JFrame implements ActionListener {
 		pfPass2.getDocument().addDocumentListener(listener);
 
 		pfPass2.setHorizontalAlignment(SwingConstants.RIGHT);
-		pNorth.add(pfPass2); // ????
+		pNorth.add(pfPass2); 
 
 		JPanel panel = new JPanel();
 		pNorth.add(panel);
@@ -113,23 +113,23 @@ public class JTextFieldAreaEx extends JFrame implements ActionListener {
 		dateChooser = new JDateChooser(new Date()); // 오늘날짜루 기본 설정하기
 		pNorth.add(dateChooser);
 
-		btnAdd = new JButton("추가");
-		btnAdd.addActionListener(this);
-		pNorth.add(btnAdd);
+		btnAdd = new JButton("추가"); //추가버튼 생성
+		btnAdd.addActionListener(this);  //추가버튼에 액션리스너 -추가버튼을 누르면리스트가 생긴다?
+		pNorth.add(btnAdd);		
 
 		btnCancel = new JButton("취소");
-		btnCancel.addActionListener(this);
+		btnCancel.addActionListener(this);  //캔슬버튼을 누르면 리스트가 생긴다? 읽어온다?
 		pNorth.add(btnCancel);
 	}
 
-	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == btnCancel) {
-			actionPerformedBtnCancel(e);
+	public void actionPerformed(ActionEvent e) {  //버튼을 누르면 어떤 기능?
+		if (e.getSource() == btnCancel) {  // 이벤트를 발생시킨 객체의 위치값을 가져오는데, 그게 취소버튼이면
+			actionPerformedBtnCancel(e);  //해당메서드 호출
 		}
-		if (e.getSource() == btnAdd) {
+		if (e.getSource() == btnAdd) {//추가버튼이면 해당메서드 호출
 			actionPerformedBtnAdd(e);
 		}
-//		if (e.getSource() == tfName) {   얘가 필요없어졌으니까 밑에 메소드내용도 삭제하기
+//		if (e.getSource() == tfName) {   얘가 필요없어졌으니까 밑에 메소드내용도 삭제하기 (네임에 입력했으면)
 //			actionPerformedTfName(e);
 //		}
 	}
@@ -148,11 +148,11 @@ public class JTextFieldAreaEx extends JFrame implements ActionListener {
 //	}
 
 	// }
-	protected void actionPerformedBtnAdd(ActionEvent e) {
-		if (lblConfirm.getText().equals("일치")) {
-			Date d = dateChooser.getDate();
-			String msg = String.format("%s - %tF%n", tfName.getText(), d);
-			ta.append(msg);
+	protected void actionPerformedBtnAdd(ActionEvent e) {  //추가버튼 누르면 실행
+		if (lblConfirm.getText().equals("일치")) { //일치한다고 뜨면 실행시킬것들
+			Date d = dateChooser.getDate();  //오늘날짜를 가져온다.
+			String msg = String.format("%s - %tF%n", tfName.getText(), d); //성명의 텍스트를 가져온다.
+			ta.append(msg);  //가져온걸 ta에 넣는다.
 			clearTf();
 
 		} else {
