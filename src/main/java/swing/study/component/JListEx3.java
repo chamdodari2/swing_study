@@ -45,7 +45,6 @@ public class JListEx3 extends JFrame implements ActionListener {
 	public JListEx3() {
 		initialize();
 		
-		
 		model.addElement(new Department(1,"기획",8));
 		model.addElement(new Department(2,"영업",18));
 		model.addElement(new Department(3,"개발",28));
