@@ -102,6 +102,7 @@ public class JComboBoxEx3 extends JFrame implements ActionListener {
 		}
 		DefaultComboBoxModel<Department> model = (DefaultComboBoxModel<Department>) cmbDept.getModel();
 		model.addElement(addDept);
+		deptList.add(addDept);// 리스트에는 중복값 확인안되던거 이제 확인가능!!!
 
 		pDept.clearTf();
 		JOptionPane.showMessageDialog(null, "추가 되었습니다.");
