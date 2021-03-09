@@ -20,4 +20,6 @@
   <term name="최대실점수" description="최대실점수" physicalName="scoreMax"/>
   <term name="평어" description="평어" physicalName="grade"/>
   <term name="평점" description="평점" physicalName="gradescore"/>
+  <term name="총점" description="총점" physicalName="total"/>
+  <term name="평균" description="평균" physicalName="avg"/>
 </tm:TermDictionary>
