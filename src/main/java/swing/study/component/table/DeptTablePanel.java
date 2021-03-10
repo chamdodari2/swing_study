@@ -21,7 +21,7 @@ public class DeptTablePanel extends JPanel {
 
 		initialize();
 	}
-
+  
 	private void initialize() {
 		setLayout(new BorderLayout(0, 0));
 

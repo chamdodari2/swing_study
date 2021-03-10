@@ -19,7 +19,9 @@ import swing.study.component.table.Student;
 import swing.study.component.table.TitleTablePanel;
 import swing.study.panel.Department;
 import swing.study.panel.Employee;
+import swing.study.panel.StudentManagement;
 import swing.study.panel.Title;
+import swing.study.component.table.StudentManagementTablePanel;
 
 public class JTableEx extends JFrame {
 
@@ -31,6 +33,7 @@ public class JTableEx extends JFrame {
 	private List<Department> deptList = new ArrayList<>();//11
 	private List<Title> titleList = new ArrayList<>();//11
 	private List<Employee> empList = new ArrayList<>();//11
+	private List<StudentManagement> stdMgnList = new ArrayList<>();//11
 	
 	
 	public JTableEx() {//
@@ -51,6 +54,10 @@ public class JTableEx extends JFrame {
 		empList.add(new Employee(1,"이태훈",titleList.get(0),new Employee(1,"김상건"),2000000,deptList.get(0)));
 		empList.add(new Employee(2,"이성래",titleList.get(1),new Employee(1,"김상건"),1500000,deptList.get(1)));
 		empList.add(new Employee(3,"이태훈",titleList.get(2),new Employee(1,"김상건"),2000000,deptList.get(1)));
+	//////////////////////////////////////////////////수정중	
+		stdMgnList.add(new StudentManagement(1,"김예진","스윙",1,"졸업","미필","960828","01095660476","주"));
+ ////////////////////////////////////////////////////////
+		
 		
 		
 		initialize();
@@ -115,6 +122,12 @@ public class JTableEx extends JFrame {
 		
 		JPanel pTable6 = new JPanel();
 		contentPane.add(pTable6);
+		pTable6.setLayout(new BorderLayout(0, 0));
+		
+		StudentManagementTablePanel pStdMgnTable = new StudentManagementTablePanel();
+		pStdMgnTable.setList(stdMgnList);
+		pTable6.add(pStdMgnTable, BorderLayout.CENTER);
+
 	}
 	public DefaultTableModel getModel() {
 		CustomTableModel model = new CustomTableModel(getData(),getColumnNames());

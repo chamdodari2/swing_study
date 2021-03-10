@@ -47,7 +47,7 @@ public abstract class AbstractCustomTablePanel<T> extends JPanel {
 			data[i] = toArray(list.get(i));
 		}
 		
-		CustomTableModel model = new CustomTableModel(data, getColumnNames());
+	 	CustomTableModel model = new CustomTableModel(data, getColumnNames());
 		table.setModel(model);
 		
 		setAlignAndWidth();

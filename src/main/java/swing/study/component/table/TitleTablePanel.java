@@ -13,7 +13,7 @@ public class TitleTablePanel extends AbstractCustomTablePanel<Title> {
 		setTableCellWidth(100,250);
 	}
 
-	@Override
+	@Override 
 	public Object[] toArray(Title t) {
 		
 		return new Object[] {t.gettNo(),t.gettName()};
