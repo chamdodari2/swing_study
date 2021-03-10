@@ -103,7 +103,7 @@ public class JListEx2 extends JFrame implements ActionListener {
 		}
 		return model;
 	}
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e) { 
 		if (e.getSource() == tfValue) {
 			actionPerformedTfValue(e);
 		}

@@ -27,7 +27,7 @@ public class JComboBoxEx1 extends JFrame implements ActionListener {
 	private JTextField tf3;
 
 
-	public JComboBoxEx1() {
+	public JComboBoxEx1() { 
 		initialize();  //컴포넌트 초기화하고 데이터 추가하겠다
 		
 		addDataCmb1();
@@ -73,7 +73,7 @@ public class JComboBoxEx1 extends JFrame implements ActionListener {
 		
 		cmb1 = new JComboBox<>();  //꺽쇠 넣어줘야함
 		pCmb1.add(cmb1);
-		
+		 
 		tf1 = new JTextField();
 		tf1.addActionListener(this);
 		pCmb1.add(tf1);

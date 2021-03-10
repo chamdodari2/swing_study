@@ -347,21 +347,21 @@ public class SwingMain extends JFrame implements ActionListener {
 	////액션포폼드 추가 (디자인에서 추가한거임)
 	protected void actionPerformedBtnFlowLayout_1(ActionEvent e) {
 		FrameLayout frame = new FrameLayout(LayoutGuBun.FLOW);
-		frame.setVisible(true);  // 이 두줄은 메인 트라이안에서 가져왔당
+		frame.setVisible(true);  
 		
 	}
 
-	protected void actionPerformedBtnGridLayout(ActionEvent e) {
+	protected void actionPerformedBtnGridLayout(ActionEvent e) { 
 		FrameLayout frame = new FrameLayout(LayoutGuBun.GRID);
-		frame.setVisible(true);  //서브창 꺼지면 메인창까지 꺼지는현상 없애기??
+		frame.setVisible(true);  
 	}
 	protected void actionPerformedBtnAbsoluteLayout(ActionEvent e) {
 		FrameLayout frame = new FrameLayout(LayoutGuBun.ABSOLUTE);
-		frame.setVisible(true);  //서브창 꺼지면 메인창까지 꺼지는현상 없애기??
+		frame.setVisible(true);  
 	}
 	protected void actionPerformedBtnBorderLayout(ActionEvent e) {
 		FrameLayout frame = new FrameLayout(LayoutGuBun.BORDER);
-		frame.setVisible(true);  //서브창 꺼지면 메인창까지 꺼지는현상 없애기??
+		frame.setVisible(true);  
 	}
 	protected void actionPerformedBtn03(ActionEvent e) {
 		FrameComponentEx frame = new FrameComponentEx();

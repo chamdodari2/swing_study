@@ -1,4 +1,4 @@
-package swing.study.component.table;
+ package swing.study.component.table;
 
 import java.awt.BorderLayout;
 import java.util.List;
