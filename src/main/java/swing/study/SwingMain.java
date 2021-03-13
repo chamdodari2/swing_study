@@ -1,5 +1,6 @@
 package swing.study;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.GridLayout;
@@ -46,11 +47,7 @@ import swing.study.layout.LayoutGuBun;
 import swing.study.listener.AnonymousClassListener2;
 import swing.study.listener.IndepClassListener;
 import swing.study.listener.InnerClassListener;
-import swing.study.listener.MouseLAdapterEx;
 import swing.study.listener.MouseListenerEx;
-
-import java.awt.BorderLayout;
-import java.awt.GridBagLayout;
 
 public class SwingMain extends JFrame implements ActionListener {
 

@@ -100,7 +100,7 @@ public class JListEx3 extends JFrame implements ActionListener {
 		pBtns.add(btnDelete);
 	}
 
-//	private ListModel<Department> getDeptModel() {   //호출되면  DefaultListModel
+//	private ListModel<Department> odel() {   //호출되면  DefaultListModel
 //		DefaultListModel<Department> model = new DefaultListModel<Department>();
 //		return model;
 //	}
